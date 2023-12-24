@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import { View, StatusBar, SafeAreaView } from "react-native";
+import { StatusBar, SafeAreaView } from "react-native";
 import { useFonts, Montserrat_400Regular, Montserrat_700Bold } from "@expo-google-fonts/montserrat";
 
 import Cesta from "./src/telas/Cesta";
@@ -14,11 +14,11 @@ export default function App() {
   });
 
   if(!fonteCarregada) {
-    return <View />
+    return <StatusBar />
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar />
       <Cesta {...mock} />
     </SafeAreaView>
