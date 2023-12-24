@@ -1,12 +1,11 @@
 
+import React from "react";
 
 import { View, StatusBar, SafeAreaView } from "react-native";
-import { useFonts,
-  Montserrat_400Regular,
-  Montserrat_700Bold } from "@expo-google-fonts/montserrat";
+import { useFonts, Montserrat_400Regular, Montserrat_700Bold } from "@expo-google-fonts/montserrat";
 
-import Cesta from './src/telas/Cesta';
-
+import Cesta from "./src/telas/Cesta";
+import mock from "./src/mock/cesta/";
 
 export default function App() {
   const [fonteCarregada] = useFonts({
@@ -15,13 +14,13 @@ export default function App() {
   });
 
   if(!fonteCarregada) {
-    <View />
+    return <View />
   }
 
   return (
     <SafeAreaView>
-      <Cesta />
       <StatusBar />
+      <Cesta {...mock} />
     </SafeAreaView>
   );
 }
